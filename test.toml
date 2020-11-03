@@ -1,0 +1,19 @@
+[package]
+name = "test-package" # Specify package name
+version = "1.0.0" # Specify package version
+
+# If these are not found within PATH, exit
+[dependencies]
+bin = ["luvit", "moonc"]
+
+[dependencies.git] # Install dependencies via git and remove the .git
+comrade = {path = "deps/Comade", source = "https://github.com/comrade-project/comrade.git"}
+commandia = {path = "deps/commandia", source = "https://github.com/Bilal2453/commandia.git"}
+
+[dependencies.lit]
+discordia = {author = "SinisterRectus", version = "latest"}
+toml = {author = "creationix", version = "latest"}
+
+[tasks.main]
+runtime = "Shell"
+script = "exit 1"
